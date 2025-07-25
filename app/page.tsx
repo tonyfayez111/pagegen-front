@@ -26,7 +26,7 @@ export default function Home() {
 
   const fetchSections = async () => {
     try {
-      const res = await fetch('http://localhost:3000/sections');
+      const res = await fetch('https://pagegen-back-production.up.railway.app/sections');
       const data = await res.json();
 
       if (data.length > 0 && data[0].sections) {
@@ -53,7 +53,7 @@ export default function Home() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('http://localhost:3000/sections', {
+      const res = await fetch('https://pagegen-back-production.up.railway.app/sections', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt }),
